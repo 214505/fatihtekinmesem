@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MESEM Ön Kayıt</title>
+    <style>
+        body { background-color: #1e272e; color: white; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding: 20px; }
+        .form-box { background-color: #2f3640; padding: 25px; border-radius: 10px; width: 100%; max-width: 450px; border-top: 6px solid #fbc531; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        h2 { color: #fbc531; text-align: center; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        label { display: block; margin-top: 15px; color: #dcdde1; font-size: 13px; font-weight: bold; }
+        input, select { width: 100%; padding: 12px; margin-top: 5px; border-radius: 5px; border: 1px solid #485460; background: #353b48; color: white; box-sizing: border-box; }
+        input:focus { border-color: #fbc531; outline: none; }
+        button { width: 100%; padding: 15px; margin-top: 25px; background-color: #fbc531; border: none; border-radius: 5px; color: #2f3640; font-weight: bold; cursor: pointer; font-size: 16px; transition: 0.3s; }
+        button:hover { background-color: #e1b12c; transform: translateY(-2px); }
+        .footer-note { text-align: center; font-size: 11px; color: #7f8c8d; margin-top: 15px; }
+    </style>
+</head>
+<body>
 
+<div class="form-box">
+    <h2>MESEM ÖN KAYIT</h2>
+    <form id="mesemForm">
+        <label>TC KİMLİK NO</label>
+        <input type="text" name="entry.111111" placeholder="11 Haneli TC Giriniz" required maxlength="11" pattern="\d{11}">
+
+        <label>ADI SOYADI</label>
+        <input type="text" name="entry.222222" placeholder="Örn: RECEP TURHAN" required>
+
+        <label>DOĞUM TARİHİ</label>
+        <input type="date" name="entry.333333" required>
+
+        <label>ÖN KAYIT DÖNEMİ</label>
+        <select name="entry.444444">
+            <option>2025-2026 ŞUBAT</option>
+            <option>2025-2026 NİSAN</option>
+            <option>2025-2026 HAZİRAN</option>
+            <option>2025-2026 AĞUSTOS</option>
+            <option>2025-2026 EKİM</option>
+            <option>2025-2026 ARALIK</option>
+        </select>
+
+        <label>TELEFON NUMARASI</label>
+        <input type="tel" name="entry.555555" placeholder="05XX XXX XX XX" required>
+
+        <button type="submit">SİSTEME KAYDET</button>
+        <p class="footer-note">Bu form ön kayıt amaçlıdır. Bilgiler güvenli tabloya aktarılır.</p>
+    </form>
+</div>
+
+<script>
+    // Buraya veriyi Google Tabloya sessizce gönderecek sihirli kodu ekleyeceğiz.
+    document.getElementById('mesemForm').onsubmit = function(e) {
+        alert("Kayıt Bilgileri Alındı! Kontrol edildikten sonra e-MESEM yüklemesi yapılacaktır.");
+    };
+</script>
+
+</body>
+</html>
